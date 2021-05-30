@@ -7,12 +7,18 @@ const gallery = (function galleryHandler() {
   const _nextSlide = () => {
     const _width = document.querySelector('.songsContainer').clientWidth
     const _songsFrame = document.querySelector('.songsFrame')
+
     const _displayed = document.querySelector('.displayed')
     const _displayedId = parseInt(_displayed.getAttribute('data-id'), 10)
+
     let _nextSongId = _displayedId + 1
     let _param = _width * _displayedId
+    const _lastSongId = parseInt(
+      _songsFrame.lastElementChild.getAttribute('data-id'),
+      10
+    )
 
-    if (_displayedId === 6) {
+    if (_displayedId === _lastSongId) {
       _nextSongId = 1
       _param = 0
     }
@@ -31,7 +37,8 @@ const gallery = (function galleryHandler() {
     let _param = _width * (_prevSongId - 1)
 
     if (_displayedId === 1) {
-      _prevSongId = 6
+      const _lastSong = _songsFrame.lastElementChild
+      _prevSongId = _lastSong.getAttribute('data-id')
       _param = _width * (_prevSongId - 1)
     }
 
