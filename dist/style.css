@@ -129,7 +129,7 @@ main {
   flex-direction: row;
   width: 240rem;
   height: 30rem;
-  transition: transform 350ms ease-in-out;
+  transition: transform 400ms ease-in-out;
 }
 .galleryArrow {
   position: absolute;
