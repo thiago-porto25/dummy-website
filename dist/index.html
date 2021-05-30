@@ -5,6 +5,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="./style.css" rel="stylesheet" type="text/css" />
+    <script
+      src="https://kit.fontawesome.com/59cf6b17a6.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Cabin&family=Source+Code+Pro&display=swap"
@@ -21,7 +25,7 @@
         <ul id="navList">
           <li class="navListItem"><a href="#home">Home</a></li>
           <li class="navListItem"><a href="#songs">Songs</a></li>
-          <li class="navListItem"><a href="#contact">Contact</a></li>
+          <li class="navListItem"><a href="#aboutUs">About us</a></li>
         </ul>
       </div>
     </nav>
@@ -30,8 +34,46 @@
         <header class="logo">MusicApp</header>
         <sub>The best place to listen to music online!</sub>
       </section>
-      <section id="songs" class="page"></section>
-      <section id="contact" class="page"></section>
+      <section id="songs" class="page">
+        <div class="songsContainer">
+          <div class="galleryArrow left">
+            <i class="fas fa-chevron-left"></i>
+          </div>
+          <div class="galleryArrow right">
+            <i class="fas fa-chevron-right"></i>
+          </div>
+          <div class="songsFrame">
+            <div class="frameItem slide1 displayed" data-id="1"></div>
+            <div class="frameItem slide2" data-id="2"></div>
+            <div class="frameItem slide3" data-id="3"></div>
+            <div class="frameItem slide4" data-id="4"></div>
+            <div class="frameItem slide5" data-id="5"></div>
+            <div class="frameItem slide6" data-id="6"></div>
+          </div>
+        </div>
+      </section>
+      <section id="aboutUs" class="page">
+        <div class="aboutContainer">
+          <img src="./images/aboutUsImg.jpg" alt="music instruments" />
+          <div class="aboutTextContainer">
+            <h3>About us</h3>
+            <p>
+              We are a fictitious music app, Lorem ipsum dolor sit amet
+              consectetur adipisicing elit. Nostrum omnis dolores magni
+              molestiae vitae atque, nihil odio? Culpa atque, cumque esse, autem
+              assumenda doloremque facere pariatur nisi dolorem accusantium
+              modi. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad
+              fuga provident optio eaque ipsam, quia vero voluptate eum, enim
+              earum necessitatibus laboriosam voluptatem nihil! Dicta sapiente
+              ipsum expedita exercitationem repellendus! Lorem ipsum dolor sit
+              amet consectetur adipisicing elit. Facere, nihil harum deleniti
+              explicabo sequi placeat sapiente. Ut assumenda numquam nihil
+              molestias nostrum. Dignissimos accusamus consequuntur modi,
+              laborum iste quod nostrum.
+            </p>
+          </div>
+        </div>
+      </section>
     </main>
     <footer>
       <p>

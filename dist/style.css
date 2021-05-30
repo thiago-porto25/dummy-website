@@ -29,6 +29,7 @@ nav {
   background-color: var(--lightpurple);
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.685);
   font-family: 'Source Code Pro', monospace;
+  z-index: 2;
 }
 #logoContainer {
   display: flex;
@@ -111,12 +112,105 @@ main {
   text-shadow: 0px 0px 6px rgb(255, 255, 255);
 }
 #songs {
+  justify-content: center;
+  align-items: center;
   background-image: url(./images/songsbg.jpg);
   background-size: cover;
 }
-#contact {
-  background-image: url(./images/contactbg.jpg);
+.songsContainer {
+  width: 40rem;
+  height: 30rem;
+  background-color: white;
+  overflow: hidden;
+  position: relative;
+}
+.songsFrame {
+  display: flex;
+  flex-direction: row;
+  width: 240rem;
+  height: 30rem;
+  transition: transform 350ms ease-in-out;
+}
+.galleryArrow {
+  position: absolute;
+  z-index: 1;
+  width: 2.5rem;
+  height: 5rem;
+  background-color: rgba(0, 0, 0, 0.521);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+  transition: 200ms ease-in-out;
+  cursor: pointer;
+}
+.galleryArrow:hover {
+  box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.644);
+}
+.left {
+  left: 10px;
+  top: 13rem;
+}
+.right {
+  right: 10px;
+  top: 13rem;
+}
+.fas {
+  transition: 200ms ease-in-out;
+  color: rgb(255, 255, 255);
+  font-size: 30px;
+}
+.galleryArrow:hover .fas {
+  font-size: 33px;
+  text-shadow: 0px 0px 5px rgba(141, 139, 139, 0.623);
+}
+.frameItem {
+  width: 40rem;
+  height: 100%;
   background-size: cover;
+}
+.slide1 {
+  background-image: url(./images/slide1.jpg);
+}
+.slide2 {
+  background-image: url(./images/slide2.jpg);
+}
+.slide3 {
+  background-image: url(./images/slide3.jpg);
+}
+.slide4 {
+  background-image: url(./images/slide4.jpg);
+}
+.slide5 {
+  background-image: url(./images/slide5.jpg);
+}
+.slide6 {
+  background-image: url(./images/slide6.jpg);
+}
+#aboutUs {
+  justify-content: center;
+  align-items: center;
+  background-image: url(./images/aboutusbg.jpg);
+  background-size: cover;
+}
+.aboutContainer {
+  display: flex;
+  width: 80%;
+  height: 80%;
+  background-color: rgba(0, 0, 0, 0.815);
+}
+.aboutTextContainer {
+  margin: 2rem;
+  color: var(--lightpink);
+  font-family: 'Source Code Pro', monospace;
+}
+.aboutTextContainer h3 {
+  text-align: center;
+  font-size: 25px;
+  margin-bottom: 2rem;
+}
+.aboutTextContainer p {
+  text-align: justify;
 }
 /*Footer styling*/
 footer {
