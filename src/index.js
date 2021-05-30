@@ -15,23 +15,25 @@ const gallery = (function () {
     }
 
     const _nextSong = document.querySelector(`[data-id='${_nextSongId}']`)
-
     _displayed.classList.toggle('displayed')
     _nextSong.classList.toggle('displayed')
-
     _songsFrame.style.transform = `translateX(-${_param}rem)`
   }
   const _prevSlide = () => {
     const _songsFrame = document.querySelector('.songsFrame')
     const _displayed = document.querySelector('.displayed')
     const _displayedId = parseInt(_displayed.getAttribute('data-id'))
-    const _prevSongId = _displayedId - 1
-    const _prevSong = document.querySelector(`[data-id='${_prevSongId}']`)
+    let _prevSongId = _displayedId - 1
+    let _param = 40 * (_prevSongId - 1)
 
+    if (_displayedId === 1) {
+      _prevSongId = 6
+      _param = 200
+    }
+
+    const _prevSong = document.querySelector(`[data-id='${_prevSongId}']`)
     _displayed.classList.toggle('displayed')
     _prevSong.classList.toggle('displayed')
-    const _param = 40 * (_prevSongId - 1)
-
     _songsFrame.style.transform = `translateX(-${_param}rem)`
   }
 
