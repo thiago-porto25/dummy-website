@@ -1,4 +1,6 @@
-const gallery = (function () {
+/* eslint-disable no-underscore-dangle */
+// eslint-disable-next-line no-unused-vars
+const gallery = (function galleryHandler() {
   const _leftArrow = document.querySelector('.left')
   const _rightArrow = document.querySelector('.right')
 
@@ -6,7 +8,7 @@ const gallery = (function () {
     const _width = document.querySelector('.songsContainer').clientWidth
     const _songsFrame = document.querySelector('.songsFrame')
     const _displayed = document.querySelector('.displayed')
-    const _displayedId = parseInt(_displayed.getAttribute('data-id'))
+    const _displayedId = parseInt(_displayed.getAttribute('data-id'), 10)
     let _nextSongId = _displayedId + 1
     let _param = _width * _displayedId
 
@@ -24,7 +26,7 @@ const gallery = (function () {
     const _width = document.querySelector('.songsContainer').clientWidth
     const _songsFrame = document.querySelector('.songsFrame')
     const _displayed = document.querySelector('.displayed')
-    const _displayedId = parseInt(_displayed.getAttribute('data-id'))
+    const _displayedId = parseInt(_displayed.getAttribute('data-id'), 10)
     let _prevSongId = _displayedId - 1
     let _param = _width * (_prevSongId - 1)
 
