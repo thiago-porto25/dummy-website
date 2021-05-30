@@ -3,11 +3,12 @@ const gallery = (function () {
   const _rightArrow = document.querySelector('.right')
 
   const _nextSlide = () => {
+    const _width = document.querySelector('.songsContainer').clientWidth
     const _songsFrame = document.querySelector('.songsFrame')
     const _displayed = document.querySelector('.displayed')
     const _displayedId = parseInt(_displayed.getAttribute('data-id'))
     let _nextSongId = _displayedId + 1
-    let _param = 40 * _displayedId
+    let _param = _width * _displayedId
 
     if (_displayedId === 6) {
       _nextSongId = 1
@@ -17,14 +18,15 @@ const gallery = (function () {
     const _nextSong = document.querySelector(`[data-id='${_nextSongId}']`)
     _displayed.classList.toggle('displayed')
     _nextSong.classList.toggle('displayed')
-    _songsFrame.style.transform = `translateX(-${_param}rem)`
+    _songsFrame.style.transform = `translateX(-${_param}px)`
   }
   const _prevSlide = () => {
+    const _width = document.querySelector('.songsContainer').clientWidth
     const _songsFrame = document.querySelector('.songsFrame')
     const _displayed = document.querySelector('.displayed')
     const _displayedId = parseInt(_displayed.getAttribute('data-id'))
     let _prevSongId = _displayedId - 1
-    let _param = 40 * (_prevSongId - 1)
+    let _param = _width * (_prevSongId - 1)
 
     if (_displayedId === 1) {
       _prevSongId = 6
@@ -34,7 +36,7 @@ const gallery = (function () {
     const _prevSong = document.querySelector(`[data-id='${_prevSongId}']`)
     _displayed.classList.toggle('displayed')
     _prevSong.classList.toggle('displayed')
-    _songsFrame.style.transform = `translateX(-${_param}rem)`
+    _songsFrame.style.transform = `translateX(-${_param}px)`
   }
 
   _leftArrow.addEventListener('click', () => {
@@ -43,4 +45,6 @@ const gallery = (function () {
   _rightArrow.addEventListener('click', () => {
     _nextSlide()
   })
+
+  setInterval(() => _nextSlide(), 5000)
 })()
