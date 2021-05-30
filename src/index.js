@@ -30,7 +30,7 @@ const gallery = (function () {
 
     if (_displayedId === 1) {
       _prevSongId = 6
-      _param = 200
+      _param = _width * (_prevSongId - 1)
     }
 
     const _prevSong = document.querySelector(`[data-id='${_prevSongId}']`)
