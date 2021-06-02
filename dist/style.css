@@ -117,6 +117,34 @@ main {
   background-image: url(./images/songsbg.jpg);
   background-size: cover;
 }
+.songsNavContainer {
+  width: 40rem;
+  height: 32rem;
+  position: relative;
+}
+.songsNav {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  width: 40rem;
+}
+.songsNavItem {
+  width: 0.5rem;
+  height: 0.5rem;
+  border: 3px solid white;
+  border-radius: 100px;
+  margin-right: 5px;
+  margin-left: 5px;
+  cursor: pointer;
+  transition: background-color 300ms ease-in-out;
+}
+.songsNavItem:hover {
+  box-shadow: 0px 0px 3px white;
+}
+.songsNavDisplayed {
+  background-color: white;
+}
 .songsContainer {
   width: 40rem;
   height: 30rem;
