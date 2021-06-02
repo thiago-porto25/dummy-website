@@ -193,6 +193,9 @@ main {
   text-shadow: 0px 0px 5px rgba(141, 139, 139, 0.623);
 }
 .frameItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 40rem;
   height: 100%;
   background-size: cover;

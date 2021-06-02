@@ -92,6 +92,4 @@ const gallery = (function galleryHandler() {
       _navigateSlide(e)
     })
   )
-
-  setInterval(() => _nextSlide(), 5000)
 })()
