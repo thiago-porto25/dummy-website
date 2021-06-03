@@ -5,6 +5,7 @@ const gallery = (function galleryHandler() {
   const _leftArrow = document.querySelector('.left')
   const _rightArrow = document.querySelector('.right')
   const _songsNavItems = document.querySelectorAll('.songsNavItem')
+  const _allAudio = document.querySelectorAll('audio')
 
   const _stopAudio = (audio) => {
     audio.pause()
@@ -104,6 +105,12 @@ const gallery = (function galleryHandler() {
 
     _songsFrame.style.transform = `translateX(-${_param}px)`
   }
+  // eslint-disable-next-line no-unused-vars
+  const _fixVolume = (function _fix() {
+    _allAudio.forEach((audio) => {
+      audio.volume = 0.18
+    })
+  })()
 
   _leftArrow.addEventListener('click', _prevSlide)
   _rightArrow.addEventListener('click', _nextSlide)
