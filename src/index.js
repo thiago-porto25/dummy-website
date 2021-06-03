@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 /* eslint-disable no-underscore-dangle */
 // eslint-disable-next-line no-unused-vars
 const gallery = (function galleryHandler() {
@@ -5,13 +6,17 @@ const gallery = (function galleryHandler() {
   const _rightArrow = document.querySelector('.right')
   const _songsNavItems = document.querySelectorAll('.songsNavItem')
 
+  const _stopAudio = (audio) => {
+    audio.pause()
+    audio.currentTime = 0
+  }
   const _nextSlide = () => {
     const _width = document.querySelector('.songsContainer').clientWidth
     const _songsFrame = document.querySelector('.songsFrame')
 
     const _displayed = document.querySelector('.displayed')
-
     const _displayedId = parseInt(_displayed.getAttribute('data-id'), 10)
+    const _displayedAudio = _displayed.querySelector('audio')
     const _songsNavItemDisplayed = document.querySelector('.songsNavDisplayed')
 
     let _nextSongId = _displayedId + 1
@@ -27,13 +32,18 @@ const gallery = (function galleryHandler() {
     }
 
     const _nextSong = document.querySelector(`[data-id='${_nextSongId}']`)
+    const _nextAudio = _nextSong.querySelector('audio')
     const _nextSongsNavItem = document.querySelector(
       `[data-songsNav='${_nextSongId}']`
     )
     _displayed.classList.toggle('displayed')
+    _stopAudio(_displayedAudio)
     _songsNavItemDisplayed.classList.toggle('songsNavDisplayed')
+
     _nextSong.classList.toggle('displayed')
+    _nextAudio.play()
     _nextSongsNavItem.classList.toggle('songsNavDisplayed')
+
     _songsFrame.style.transform = `translateX(-${_param}px)`
   }
   const _prevSlide = () => {
@@ -41,9 +51,9 @@ const gallery = (function galleryHandler() {
     const _songsFrame = document.querySelector('.songsFrame')
 
     const _songsNavItemDisplayed = document.querySelector('.songsNavDisplayed')
-
     const _displayed = document.querySelector('.displayed')
     const _displayedId = parseInt(_displayed.getAttribute('data-id'), 10)
+    const _displayedAudio = _displayed.querySelector('audio')
 
     let _prevSongId = _displayedId - 1
     let _param = _width * (_prevSongId - 1)
@@ -55,13 +65,18 @@ const gallery = (function galleryHandler() {
     }
 
     const _prevSong = document.querySelector(`[data-id='${_prevSongId}']`)
+    const _prevAudio = _prevSong.querySelector('audio')
     const _prevSongsNavItem = document.querySelector(
       `[data-songsNav='${_prevSongId}']`
     )
     _displayed.classList.toggle('displayed')
+    _stopAudio(_displayedAudio)
     _songsNavItemDisplayed.classList.toggle('songsNavDisplayed')
+
     _prevSong.classList.toggle('displayed')
+    _prevAudio.play()
     _prevSongsNavItem.classList.toggle('songsNavDisplayed')
+
     _songsFrame.style.transform = `translateX(-${_param}px)`
   }
   const _navigateSlide = (e) => {
@@ -70,18 +85,23 @@ const gallery = (function galleryHandler() {
 
     const _displayed = document.querySelector('.displayed')
     const _songsNavItemDisplayed = document.querySelector('.songsNavDisplayed')
-
+    const _displayedAudio = _displayed.querySelector('audio')
     const _nextSongId = parseInt(e.target.getAttribute('data-songsNav'), 10)
     const _param = _width * (_nextSongId - 1)
 
     const _nextSong = document.querySelector(`[data-id='${_nextSongId}']`)
+    const _nextAudio = _nextSong.querySelector('audio')
     const _nextSongsNavItem = document.querySelector(
       `[data-songsNav='${_nextSongId}']`
     )
     _displayed.classList.toggle('displayed')
+    _stopAudio(_displayedAudio)
     _songsNavItemDisplayed.classList.toggle('songsNavDisplayed')
+
     _nextSong.classList.toggle('displayed')
+    _nextAudio.play()
     _nextSongsNavItem.classList.toggle('songsNavDisplayed')
+
     _songsFrame.style.transform = `translateX(-${_param}px)`
   }
 

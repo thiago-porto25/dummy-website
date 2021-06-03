@@ -118,7 +118,7 @@ main {
   background-size: cover;
 }
 .songsNavContainer {
-  width: 40rem;
+  width: 30rem;
   height: 32rem;
   position: relative;
 }
@@ -127,7 +127,7 @@ main {
   justify-content: center;
   position: absolute;
   bottom: 0;
-  width: 40rem;
+  width: 100%;
 }
 .songsNavItem {
   width: 0.5rem;
@@ -146,16 +146,15 @@ main {
   background-color: white;
 }
 .songsContainer {
-  width: 40rem;
+  width: 30rem;
   height: 30rem;
-  background-color: white;
   overflow: hidden;
   position: relative;
 }
 .songsFrame {
   display: flex;
   flex-direction: row;
-  width: 240rem;
+  width: 180rem;
   height: 30rem;
   transition: transform 400ms ease-in-out;
 }
@@ -194,29 +193,17 @@ main {
 }
 .frameItem {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 40rem;
   height: 100%;
-  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.493);
 }
-.slide1 {
-  background-image: url(./images/slide1.jpg);
-}
-.slide2 {
-  background-image: url(./images/slide2.jpg);
-}
-.slide3 {
-  background-image: url(./images/slide3.jpg);
-}
-.slide4 {
-  background-image: url(./images/slide4.jpg);
-}
-.slide5 {
-  background-image: url(./images/slide5.jpg);
-}
-.slide6 {
-  background-image: url(./images/slide6.jpg);
+.frameItem img {
+  width: 250px;
+  height: 250px;
+  margin-bottom: 1rem;
 }
 #aboutUs {
   justify-content: center;
